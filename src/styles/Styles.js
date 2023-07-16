@@ -28,9 +28,12 @@ const Styles = StyleSheet.create({
 
       login:{
           width:310,
-          borderColor:'#48B6E4',
-          borderWidth:2,
+          borderColor:'#FFFFFF',
+          borderLeftWidth:1,
+          borderBottomWidth:1,
+          shadowColor:'#FFFFFF',
           borderRadius:15,
+          boxShadow:'0 4px 30px rgba(0, 0, 0, 0.1)',
           padding:10,
           alignItems: 'center',
           bottom:0,
