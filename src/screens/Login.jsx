@@ -4,6 +4,7 @@ import Styles from '../styles/Styles';
 import {  View,ScrollView, Image, Text,TextInput, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import { BlurView } from 'expo-blur';
 import logo from '../../assets/logo.png'
+import { useSelector } from 'react-redux';
 
 
 
@@ -12,12 +13,12 @@ import logo from '../../assets/logo.png'
 
 function Login() { 
   const [isHighlighted, setIsHighlighted] = useState(false);
-  const [email,setEmail] = useState('');
+  const [email,setEmail] = useState(useSelector((state) => state.user.userDetails));
   const [password,setPassword] = useState('');
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(useSelector((state) => state.user.isAuthenticated));
   const Login =()=>{
 console.log(email)
-console.log(password)
+console.log(isActive)
 
   }
 
