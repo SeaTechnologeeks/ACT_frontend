@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import VideoBackground from '../components/Video';
 import Styles from '../styles/Styles';
-import {  View,ScrollView, Image, Text,TextInput, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { ImageBackground, View,ScrollView, Image, Text,TextInput, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import { BlurView } from 'expo-blur';
 import logo from '../../assets/logo.png'
 import { useSelector } from 'react-redux';
-
+import bg from '../../assets/bg.png'
 
 
 
@@ -23,8 +22,9 @@ console.log(isActive)
   }
 
   return (
+    <ImageBackground source={bg} resizeMode='cover' style={Styles.background}>
    <View style={Styles.container}>
-     <VideoBackground />
+      
 
       <ScrollView contentContainerStyle={{
         flex:1,
@@ -67,14 +67,15 @@ console.log(isActive)
                   </TouchableOpacity>
 
                   <TouchableOpacity style={Styles.GuestButton}>
-                    <Text style={Styles.text}>Continue as Guest</Text>
+                    <Text style={Styles.text}>Create Acoount</Text>
                   </TouchableOpacity>
             </View>
           </KeyboardAvoidingView>
           </BlurView>
       </ScrollView>
+      
    </View>
-   
+   </ImageBackground>
   )
 }
 

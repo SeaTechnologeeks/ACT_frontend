@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from "../screens/Home";
 import Login from '../screens/Login';
+import Welcome from '../screens/Welcome';
 
 
 const stack = createStackNavigator();
@@ -10,14 +10,14 @@ const screenOptionsStyle = {
 };
 
 
-const HomeStackNavigator =() => {
+const AuthStack =() => {
     return (
         <stack.Navigator screenOptions={screenOptionsStyle}>
-            { /*<stack.Screen name ="splash" component={Splash}/> */}
+            
+            <stack.Screen name ="welcome" component={Welcome}/>
             <stack.Screen name ="login" component={Login}/>
-            <stack.Screen name ="home" component={Home}/>
         </stack.Navigator>
     );
 };
 
-export default HomeStackNavigator;
+export default AuthStack;

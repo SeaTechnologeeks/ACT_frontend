@@ -15,6 +15,15 @@ const Styles = StyleSheet.create({
         justifyContent:'flex-end',
         alignItems: 'center',
         justifyContent: 'center',
+        
+      },
+
+      WelcomeContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        margin:10,
+        padding:10,
+        bottom:10,
       },
    
       backgroundVideo: {
@@ -100,6 +109,10 @@ const Styles = StyleSheet.create({
         margin:5,
         padding:5,
 
+      },
+      background: {
+        flex: 1,
+        justifyContent: 'center',
       },
    
 });
