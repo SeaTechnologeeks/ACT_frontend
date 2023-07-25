@@ -15,7 +15,7 @@ const Styles = StyleSheet.create({
         justifyContent:'flex-end',
         alignItems: 'center',
         justifyContent: 'center',
-        
+     
       },
 
       WelcomeContainer: {
@@ -38,7 +38,7 @@ const Styles = StyleSheet.create({
       login:{
           width:310,
           borderColor:'#FFFFFF',
-          borderLeftWidth:1,
+          borderRightWidth:1,
           borderBottomWidth:1,
           shadowColor:'#FFFFFF',
           borderRadius:15,

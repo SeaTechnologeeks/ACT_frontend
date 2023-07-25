@@ -10,7 +10,7 @@ import bg from '../../assets/bg.png'
 
 
 
-function Login() { 
+export default function Login({navigation}) { 
   const [isHighlighted, setIsHighlighted] = useState(false);
   const [email,setEmail] = useState(useSelector((state) => state.user.userDetails));
   const [password,setPassword] = useState('');
@@ -62,11 +62,11 @@ console.log(isActive)
                      >Login</Text>
                   </TouchableOpacity>
 
-                  <TouchableOpacity style={Styles.button}>
+                  <TouchableOpacity style={Styles.button} onPress={() => navigation.navigate('welcome')}>
                     <Text style={Styles.text}>Forgot Password</Text>
                   </TouchableOpacity>
 
-                  <TouchableOpacity style={Styles.GuestButton}>
+                  <TouchableOpacity style={Styles.GuestButton} onPress={() => navigation.navigate('register')}>
                     <Text style={Styles.text}>Create Acoount</Text>
                   </TouchableOpacity>
             </View>
@@ -79,4 +79,3 @@ console.log(isActive)
   )
 }
 
-export default Login

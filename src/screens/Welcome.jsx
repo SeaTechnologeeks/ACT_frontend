@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import VideoBackground from '../components/Video';
 import Styles from '../styles/Styles';
-import {  View,ScrollView, Image, Text,TextInput, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import {  View,ScrollView,  Text, TouchableOpacity } from 'react-native';
 import { BlurView } from 'expo-blur';
-import logo from '../../assets/logo.png'
-import { useSelector } from 'react-redux';
+
 
 
 
