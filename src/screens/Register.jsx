@@ -6,24 +6,50 @@ import { BlurView } from 'expo-blur';
 import logo from '../../assets/logo.png'
 import Google from '../../assets/google.png';
 import Apple from '../../assets/apple.png';
-import { supabase } from '../utilities/supabase';
+import * as AppleAuthentication from 'expo-apple-authentication';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "../utilities/firebaseConfig";
+import { GoogleSignin,statusCodes } from '@react-native-google-signin/google-signin';
+
+GoogleSignin.configure();
+
 
 
 const Register = ({navigation}) => {
+  const firebaseAuth = getAuth(app);
+  const provider = new firebase.auth.OAuthProvider('apple.com');
     const [isHighlighted, setIsHighlighted] = useState(false);
     
     const [isActive, setIsActive] = useState(false);
     const login = () => {
-        const { error } =  supabase.auth.signInWithSSO({
-            email: 'seabala@gmail.com',
-            password: '95062756580833',
-          })
-      
-          if (error) Alert.alert(error.message)
+        
          
         
     }
-  
+
+    const SignUpWithApple = async() => {
+      try {
+        const credential = await AppleAuthentication.signInAsync({
+          requestedScopes: [
+            AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
+            AppleAuthentication.AppleAuthenticationScope.EMAIL,
+          ],
+        });
+        // signed in
+        console.log(credential)
+      } catch (e) {
+        if (e.code === 'ERR_REQUEST_CANCELED') {
+          // handle that the user canceled the sign-in flow
+        } else {
+          // handle other errors
+        }
+      }
+     
+    }
+    const SignUpWithGoogle = async() => {
+
+   
+    }
   return (
     <ImageBackground source={bg} resizeMode='cover' style={styles.background}>
      
@@ -91,14 +117,14 @@ const Register = ({navigation}) => {
                   </View>
                              <View style={styles.social}>
 
-                  <TouchableOpacity style={styles.socialIcon}>
+                  <TouchableOpacity style={styles.socialIcon} onPress={SignUpWithApple}>
                     <Image source={Apple} style={{top:8}}/>
                   </TouchableOpacity>
 
                   <View style={styles.socialTextView}>
                   <Text style={styles.text}>OR</Text>
                   </View>
-                  <TouchableOpacity style={styles.socialIcon} onPress={login}>
+                  <TouchableOpacity style={styles.socialIcon} onPress={SignUpWithGoogle}>
                     <Image source={Google}  style={{top:10}} />
                   </TouchableOpacity>
                              </View>
