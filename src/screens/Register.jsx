@@ -7,17 +7,12 @@ import logo from '../../assets/logo.png'
 import Google from '../../assets/google.png';
 import Apple from '../../assets/apple.png';
 import * as AppleAuthentication from 'expo-apple-authentication';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { app } from "../utilities/firebaseConfig";
-import { GoogleSignin,statusCodes } from '@react-native-google-signin/google-signin';
 
-GoogleSignin.configure();
+
 
 
 
 const Register = ({navigation}) => {
-  const firebaseAuth = getAuth(app);
-  const provider = new firebase.auth.OAuthProvider('apple.com');
     const [isHighlighted, setIsHighlighted] = useState(false);
     
     const [isActive, setIsActive] = useState(false);

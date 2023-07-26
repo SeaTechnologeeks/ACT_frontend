@@ -15,15 +15,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "googleServicesFile": "./GoogleService-Info.plist"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#000000"
       },
-      "googleServicesFile": "./google-services.json"
+   
     },
     "web": {
       "favicon": "./assets/logo.png"
