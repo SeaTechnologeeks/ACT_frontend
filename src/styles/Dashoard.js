@@ -7,8 +7,11 @@ import { StyleSheet } from "react-native";
 const Styles = StyleSheet.create({
 
 main:{
-    flex: 1,
-    top:20,
+    flex:1,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
 },
 
 Inner:{
@@ -27,7 +30,14 @@ background: {
     flex: 1,
     justifyContent: 'center',
   },
-
+  container: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    justifyContent:'flex-end',
+    alignItems: 'center',
+    justifyContent: 'center',
+ 
+  },
   BlurView:{
     width:'90%',
     shadowColor:'#FFFFFF',
@@ -47,8 +57,9 @@ background: {
       fontSize:20,
       fontWeight:'400',
       color:'#ffffff',
-      marginHorizontal:12 ,
-    top:6,
+    
+    
+    textAlign:'center'
       
   },
 
@@ -62,17 +73,13 @@ background: {
     backgroundColor: '#ffffff',
     color:'#000000',
     borderColor:'#48B6E4',
-
-    
-    
-    
+  textAlign: 'center',
   },
   vinButton:{
     width:200,
     height:40,
     borderRadius:10,
-    alignItems:'center',
-    justifyContent: 'center',
+    textAlign: 'center',
     borderColor:'#ffffff',
     borderWidth:1,
    margin:10,

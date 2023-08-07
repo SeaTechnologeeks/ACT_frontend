@@ -9,12 +9,12 @@ import { Text } from 'react-native';
 const Dashboard = () => {
   return (
     <ImageBackground source={bg} resizeMode='cover' style={Styles.background}>
-
+    <View style={Styles.container}>
     <SafeAreaView style={Styles.main}>
       <ScrollView style={Styles.Inner}>
        <TopNav/>
           <BlurView intensity={20} style={Styles.BlurView}>
-          <View>
+     
                     <TextInput placeholder='Enter Vin Number'  style={Styles.input}
                           
                         
@@ -24,14 +24,15 @@ const Dashboard = () => {
                         <TouchableOpacity style={Styles.vinButton} onPress={() => navigation.navigate('welcome')}>
                     <Text style={Styles.text}>Search VIN Number</Text>
                   </TouchableOpacity>
-
+                  <Text style={Styles.text}>OR</Text>
                   <TouchableOpacity style={Styles.vinButton} onPress={() => navigation.navigate('register')}>
                     <Text style={Styles.text}>Scan VIN</Text>
                   </TouchableOpacity>
-                  </View>
+                  
           </BlurView>
       </ScrollView>
     </SafeAreaView>
+    </View>
     </ImageBackground>
   )
 }
