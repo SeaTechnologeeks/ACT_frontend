@@ -47,7 +47,7 @@ const Styles = StyleSheet.create({
     input: {
       width:290,
       height:40,
-      padding:0,
+      padding:10,
       backgroundColor: '#292929',
       borderWidth:2,
       borderRadius: 16,
@@ -67,7 +67,7 @@ const Styles = StyleSheet.create({
         fontSize:20,
         fontWeight:'400',
         color:'#ffffff',
-        marginHorizontal:5,
+        marginHorizontal:12 ,
       top:6,
         
     },

@@ -30,7 +30,7 @@ function Welcome({navigation}) {
          <View style={Styles.WelcomeContainer}>
          <BlurView intensity={20}>
        
-       <TouchableOpacity style={Styles.GuestButton} onPress={() => navigation.navigate('login')}>
+       <TouchableOpacity style={Styles.GuestButton}  onPress={()  => navigation.navigate('login')}>
                  <Text style={Styles.text}>Get Started</Text>
                </TouchableOpacity>
       

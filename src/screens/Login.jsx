@@ -16,23 +16,7 @@ export default function Login({navigation}) {
   const [password,setPassword] = useState('');
   const [isActive, setIsActive] = useState(useSelector((state) => state.user.isAuthenticated));
   const Login =async()=>{
-    try {
-      const credential = await AppleAuthentication.signInAsync({
-        requestedScopes: [
-          AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
-          AppleAuthentication.AppleAuthenticationScope.EMAIL,
-        ],
-      });
-      // signed in
-    } catch (e) {
-      if (e.code === 'ERR_REQUEST_CANCELED') {
-        // handle that the user canceled the sign-in flow
-      } else {
-        // handle other errors
-      }
-    }
-    console.log(credential)
-
+    navigation.navigate("dashboard");
   }
 
   return (
