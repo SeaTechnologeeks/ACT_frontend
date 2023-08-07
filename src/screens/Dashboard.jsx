@@ -22,7 +22,7 @@ const Dashboard = () => {
                           //onChangeText={setEmail}
                     />
                         <TouchableOpacity style={Styles.vinButton} onPress={() => navigation.navigate('welcome')}>
-                    <Text style={Styles.text}>Search VIN Number</Text>
+                    <Text style={Styles.text}>Decode VIN Number</Text>
                   </TouchableOpacity>
                   <Text style={Styles.text}>OR</Text>
                   <TouchableOpacity style={Styles.vinButton} onPress={() => navigation.navigate('register')}>

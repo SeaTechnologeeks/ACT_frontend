@@ -39,7 +39,8 @@ background: {
  
   },
   BlurView:{
-    width:'90%',
+    width: '100%',
+    height: '100%',
     shadowColor:'#FFFFFF',
     borderRadius:15,
     boxShadow:'0 4px 30px rgba(0, 0, 0, 0.1)',
@@ -54,12 +55,11 @@ background: {
 
 
   text:{
-      fontSize:20,
-      fontWeight:'400',
-      color:'#ffffff',
-    
-    
-    textAlign:'center'
+    fontSize:20,
+    fontWeight:'400',
+    color:'#ffffff',
+    top:10,
+    textAlign:'center',
       
   },
 
@@ -76,13 +76,14 @@ background: {
   textAlign: 'center',
   },
   vinButton:{
-    width:200,
+    width:180,
     height:40,
     borderRadius:10,
     textAlign: 'center',
     borderColor:'#ffffff',
     borderWidth:1,
-   margin:10,
+   margin:20,
+   backgroundColor:'#48B6E4',
    
    
     
