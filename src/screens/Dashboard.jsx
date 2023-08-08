@@ -6,7 +6,7 @@ import  bg from '../../assets/bg.png'
 import { BlurView } from 'expo-blur';
 import { Text } from 'react-native';
 
-const Dashboard = () => {
+const Dashboard = ({navigation}) => {
   return (
     <ImageBackground source={bg} resizeMode='cover' style={Styles.background}>
     <View style={Styles.container}>

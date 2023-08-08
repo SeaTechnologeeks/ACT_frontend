@@ -4,6 +4,7 @@ import Login from '../screens/Login';
 import Welcome from '../screens/Welcome';
 import Register from '../screens/Register';
 import Dashboard from '../screens/Dashboard';
+import TabNavigator from './TabNavigator';
 
 
 const stack = createStackNavigator();
@@ -20,7 +21,7 @@ const AuthStack =() => {
             <stack.Screen name ="welcome" component={Welcome}/>
             <stack.Screen name ="register" component={Register}/>
             <stack.Screen name ="login" component={Login}/>
-            <stack.Screen name ="dashboard" component={Dashboard}/>
+            
         </stack.Navigator>
     );
 };

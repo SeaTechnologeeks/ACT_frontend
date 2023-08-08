@@ -16,7 +16,7 @@ export default function Login({navigation}) {
   const [password,setPassword] = useState('');
   const [isActive, setIsActive] = useState(useSelector((state) => state.user.isAuthenticated));
   const Login =async()=>{
-    navigation.navigate("dashboard");
+    navigation.navigate('Dashboard', {screen:'Home'});
   }
 
   return (

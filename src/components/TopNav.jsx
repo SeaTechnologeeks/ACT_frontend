@@ -2,14 +2,11 @@ import React from 'react'
 import { ImageBackground, Text, View } from 'react-native'
 import avatar from '../../assets/avatar.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 
-
-const Profile = () => {
-   navigation.navigate('login')
-}
-const TopNav = ({navigation}) => {
-
+const TopNav = () => {
+  const navigation = useNavigation();
   return (
     <View style={{
         flexDirection:'row',
@@ -18,7 +15,7 @@ const TopNav = ({navigation}) => {
     }}>
        
         <Text style={{fontSize:20, fontWeight:'900',color:'white'}}>Anti-Car Theft</Text>
-        <TouchableOpacity onPress={Profile}>
+        <TouchableOpacity onPress={()=>navigation.openDrawer()}>
         <ImageBackground
                 source={avatar}
                 style={{width:45,height:45}}

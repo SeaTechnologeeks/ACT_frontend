@@ -4,6 +4,7 @@ import 'react-native-gesture-handler';
 import store from './src/store/index';
 import {Provider} from 'react-redux';
 import AuthStack from './src/navigation/AuthStack';
+import MainStack from './src/navigation/MainStack';
 
 export default function App(){
 
@@ -12,7 +13,8 @@ export default function App(){
   
       <NavigationContainer>
          <Provider store ={store}>
-          <AuthStack/>
+        
+          <MainStack/>
           </Provider>
     </NavigationContainer>
   

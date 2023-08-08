@@ -7,12 +7,14 @@ import logo from '../../assets/logo.png'
 import Google from '../../assets/google.png';
 import Apple from '../../assets/apple.png';
 import * as AppleAuthentication from 'expo-apple-authentication';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 
 
-const Register = ({navigation}) => {
+const Register = () => {
+  const navigation = useNavigation();
     const [isHighlighted, setIsHighlighted] = useState(false);
     
     const [isActive, setIsActive] = useState(false);
@@ -32,6 +34,7 @@ const Register = ({navigation}) => {
         });
         // signed in
         console.log(credential)
+        navigation.navigate('Dashboard', {screen:'Home'});
       } catch (e) {
         if (e.code === 'ERR_REQUEST_CANCELED') {
           // handle that the user canceled the sign-in flow
