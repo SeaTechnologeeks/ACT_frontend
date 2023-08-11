@@ -5,6 +5,7 @@ import Welcome from '../screens/Welcome';
 import Register from '../screens/Register';
 import Dashboard from '../screens/Dashboard';
 import TabNavigator from './TabNavigator';
+import MainStack from './MainStack';
 
 
 const stack = createStackNavigator();
@@ -16,12 +17,11 @@ const screenOptionsStyle = {
 
 const AuthStack =() => {
     return (
-        <stack.Navigator screenOptions={screenOptionsStyle} sceneAnimationEnabled={true}>
+        <stack.Navigator screenOptions={screenOptionsStyle} sceneAnimationEnabled={false}>
             
             <stack.Screen name ="welcome" component={Welcome}/>
             <stack.Screen name ="register" component={Register}/>
             <stack.Screen name ="login" component={Login}/>
-            
         </stack.Navigator>
     );
 };

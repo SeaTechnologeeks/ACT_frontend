@@ -34,7 +34,7 @@ const Register = () => {
         });
         // signed in
         console.log(credential)
-        navigation.navigate('Dashboard', {screen:'Home'});
+        navigation.navigate('Main');
       } catch (e) {
         if (e.code === 'ERR_REQUEST_CANCELED') {
           // handle that the user canceled the sign-in flow

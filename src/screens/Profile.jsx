@@ -7,7 +7,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 const Profile = () => {
   return (
     <View> 
-    <Ionicons name="md-checkmark-circle" size={32} color="green" />
+    <Ionicons name="home-outlined" size={32} color="green" />
     <MaterialCommunityIcons name="home"  size={32} />
  
    </View>

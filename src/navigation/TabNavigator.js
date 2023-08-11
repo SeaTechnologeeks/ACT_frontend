@@ -5,7 +5,7 @@ import History from '../screens/History';
 import Login from '../screens/Login';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import Ionicons from '@expo/vector-icons/Ionicons';
-
+import { useNavigation } from '@react-navigation/native';
 
 
 const Tab = createBottomTabNavigator();
@@ -14,26 +14,37 @@ const Tab = createBottomTabNavigator();
 
 
 const TabNavigator = () => {
+  const navigation = useNavigation();
   return (
-    <Tab.Navigator screenOptions={{
+    <Tab.Navigator screenOptions={({route}) => (
+      {
         headerShown:false,
         tabBarShowLabel:true,
+        tabBarStyle:{backgroundColor:'black'},
+        tabBarIcon: ({color, size, focused}) => {
+         
+            const  name  = route.name;
+            console.log(name);
+            if(name === "Home"){
+              
+           return   <Ionicons name={'home'} size={size} color={'white'}/>
+            }
+            else {
+             return <Ionicons name={'file-tray-full-outline'} size={size} color={'white'}/>
+
+            }
+          
+        },
+        tabBarHideOnKeyboard:true,
+        tabBarAllowFontScaling:true,
+        tabBarLabelStyle:{color:'white'}
+
+    }
+    )}>
+        
+        <Tab.Screen name="Home" component={Dashboard}  />
+        <Tab.Screen name="History" component={History}  />
        
-
-    }}>
-        <Tab.Screen name="Home" component={Dashboard}  options={{
-            tabBarIcon:({color ,size}) => {
-                <MaterialCommunityIcons name="home"  color={'#fff'} size={32} />
-
-            }
-        }}/>
-        <Tab.Screen name="History" component={History}  options={{
-            tabBarIcon:() => {
-                <Ionicons name="md-checkmark-circle" size={32} color="green" />
-
-            }
-        }}/>
-        <Tab.Screen name="Profile" component={Login}/>
     </Tab.Navigator>
   )
 }
