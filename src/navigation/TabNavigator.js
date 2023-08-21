@@ -24,7 +24,7 @@ const TabNavigator = () => {
         tabBarIcon: ({color, size, focused}) => {
          
             const  name  = route.name;
-            console.log(name);
+          
             if(name === "Home"){
               
            return   <Ionicons name={'home'} size={size} color={'white'}/>

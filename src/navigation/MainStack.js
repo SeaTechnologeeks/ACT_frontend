@@ -5,6 +5,7 @@ import TabNavigator from './TabNavigator';
 import Profile from '../screens/Profile';
 import Settings from '../screens/Settings';
 import AuthStack from './AuthStack';
+import Results from '../screens/Results';
 
 
 const Drawer = createDrawerNavigator();
@@ -23,6 +24,7 @@ const MainStack = () => {
         <Drawer.Screen name="Main" component={TabNavigator}/>
         <Drawer.Screen name="profile" component={Profile}/>
         <Drawer.Screen name ="settings" component={Settings}/>
+        <Drawer.Screen name="Results" component={Results}/>
       
       
     </Drawer.Navigator>

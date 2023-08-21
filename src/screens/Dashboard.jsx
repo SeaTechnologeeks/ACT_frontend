@@ -1,12 +1,47 @@
-import React from 'react'
-import { SafeAreaView, ScrollView, View,ImageBackground, TextInput, TouchableOpacity } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { SafeAreaView, ScrollView, View,ImageBackground, TextInput, TouchableOpacity, Alert } from 'react-native'
 import TopNav from '../components/TopNav';
 import Styles from '../styles/Dashoard';
 import  bg from '../../assets/bg.png'
 import { BlurView } from 'expo-blur';
 import { Text } from 'react-native';
+import { VINvalidate } from '../utilities/validate';
+import { useDispatch, useSelector,shallowEqual } from 'react-redux';
+import { RecordsFetch, TicketsFetch, vinFetch } from '../store/AsyncThunk';
+
+
+
+
+
+
+
+
 
 const Dashboard = ({navigation}) => {
+  const [vin,setVin] = useState('')
+  const [loading,setLoading] =  useState(useSelector((state) => state.car),shallowEqual)
+  const dispatch = useDispatch();
+  
+ 
+
+  const validate = (vin) => {
+    if(VINvalidate(vin)){
+      dispatch(vinFetch(vin))
+      dispatch(TicketsFetch(vin))
+      dispatch(RecordsFetch(vin))
+    
+   
+      navigation.navigate("Results")
+   
+   
+    }else {
+
+      return VINvalidate(vin)
+    }
+}
+
+
+
   return (
     <ImageBackground source={bg} resizeMode='cover' style={Styles.background}>
     <View style={Styles.container}>
@@ -19,9 +54,9 @@ const Dashboard = ({navigation}) => {
                           
                         
                           keyboardType='email-address'
-                          //onChangeText={setEmail}
+                          onChangeText={setVin}
                     />
-                        <TouchableOpacity style={Styles.vinButton} onPress={() => navigation.navigate('welcome')}>
+                        <TouchableOpacity style={Styles.vinButton} onPress={() => validate(vin)}>
                     <Text style={Styles.text}>Decode VIN Number</Text>
                   </TouchableOpacity>
                   <Text style={Styles.text}>OR</Text>

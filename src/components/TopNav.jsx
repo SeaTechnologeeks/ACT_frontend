@@ -11,10 +11,11 @@ const TopNav = () => {
     <View style={{
         flexDirection:'row',
         justifyContent: 'space-between',
+        alignContent:'space-between',
         marginBottom:20,
     }}>
        
-        <Text style={{fontSize:20, fontWeight:'900',color:'white'}}>Anti-Car Theft</Text>
+        <Text style={{fontSize:20, fontWeight:'900',color:'white',justifyContent:'flex-start'}}>Anti-Car Theft</Text>
         <TouchableOpacity onPress={()=>navigation.openDrawer()}>
         <ImageBackground
                 source={avatar}
