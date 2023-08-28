@@ -25,6 +25,7 @@ const Dashboard = ({navigation}) => {
  
 
   const validate = (vin) => {
+    console.log(vin)
     if(VINvalidate(vin)){
       dispatch(vinFetch(vin))
       dispatch(TicketsFetch(vin))
@@ -52,7 +53,7 @@ const Dashboard = ({navigation}) => {
      
                     <TextInput placeholder='Enter Vin Number'  style={Styles.input}
                           
-                        
+                          autoCapitalize = {"characters"}
                           keyboardType='email-address'
                           onChangeText={setVin}
                     />
