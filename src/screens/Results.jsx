@@ -3,8 +3,8 @@ import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Styles from '../styles/Results';
 import {  useSelector } from 'react-redux';
-import { Roboto_400Regular,Roboto_700Bold } from '@expo-google-fonts/roboto';
-import {Montserrat_600SemiBold} from '@expo-google-fonts/montserrat'
+import { Roboto_400Regular } from '@expo-google-fonts/roboto';
+import {Montserrat_600SemiBold,Montserrat_400Regular} from '@expo-google-fonts/montserrat';
 import { useFonts } from 'expo-font';
 import CustomSwitch from '../components/customSwitch';
 import VinData from '../components/VinData';
@@ -15,7 +15,7 @@ const Results = ({navigation}) => {
   const [CarDataTab,SetCarDataTab] = useState(1)
 
   let [fontsLoaded, fontError] = useFonts({
-    Roboto_400Regular,Montserrat_600SemiBold  });
+    Roboto_400Regular,Montserrat_600SemiBold,Montserrat_400Regular });
   
   const onSelectSwitch = value => {
       SetCarDataTab(value)
@@ -34,7 +34,7 @@ const Results = ({navigation}) => {
        SetAvatar(car.vinDetails[4])    
        
     
-    },[car])
+    },[car,MainAvatar])
 
     return (
 
@@ -56,7 +56,7 @@ const Results = ({navigation}) => {
             <Text style={Styles.title}>{car.vinDetails[0]}</Text>
             <Text style={Styles.text}>{car.vinDetails[1]}</Text>
             <Text style={Styles.text}>{car.vinDetails[2]}</Text>
-            <Text style={Styles.text}>{car.vinDetails[3]}</Text>
+            <Text style={Styles.text}>{car.vinDetails[5]}</Text>
 
 
         </View>
@@ -81,9 +81,9 @@ const Results = ({navigation}) => {
         onSelectSwitch={onSelectSwitch}/>
     </View>
 
-    <ScrollView >
+    <ScrollView style={{margin:10,padding:10,top:'-15%'}}>
       {CarDataTab == 1 && <Text style={Styles.title}>Tickets</Text>}
-      {CarDataTab == 2 && <VinData/> }
+      {CarDataTab == 2 && <VinData data={car.vinDetails}/> }
       {CarDataTab == 3 && <Text style={Styles.title}>Records</Text>}
     </ScrollView>
 

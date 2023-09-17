@@ -47,7 +47,7 @@ const Dashboard = ({navigation}) => {
     <ImageBackground source={bg} resizeMode='cover' style={Styles.background}>
     <View style={Styles.container}>
     <SafeAreaView style={Styles.main}>
-      <ScrollView style={Styles.Inner}>
+      <View style={Styles.Inner}>
        <TopNav/>
           <BlurView intensity={20} style={Styles.BlurView}>
      
@@ -58,7 +58,7 @@ const Dashboard = ({navigation}) => {
                           onChangeText={setVin}
                     />
                         <TouchableOpacity style={Styles.vinButton} onPress={() => validate(vin)}>
-                    <Text style={Styles.text}>Decode VIN Number</Text>
+                    <Text style={Styles.text}>Decode VIN</Text>
                   </TouchableOpacity>
                   <Text style={Styles.text}>OR</Text>
                   <TouchableOpacity style={Styles.vinButton} onPress={() => navigation.navigate('register')}>
@@ -66,7 +66,7 @@ const Dashboard = ({navigation}) => {
                   </TouchableOpacity>
                   
           </BlurView>
-      </ScrollView>
+      </View>
     </SafeAreaView>
     </View>
     </ImageBackground>

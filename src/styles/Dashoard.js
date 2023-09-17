@@ -15,13 +15,15 @@ main:{
 },
 
 Inner:{
+  width: '100%',
+  height: '100%',
     padding:20,
     margin:2,
 
 },
 mainView:{
-    width:100,
-    height:100,
+  width: '100%',
+  height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -31,6 +33,8 @@ background: {
     justifyContent: 'center',
   },
   container: {
+    width: '100%',
+    height: '100%',
     flex: 1,
     backgroundColor: 'transparent',
     justifyContent:'flex-end',
@@ -40,7 +44,7 @@ background: {
   },
   BlurView:{
     width: '100%',
-    height: '100%',
+   
     shadowColor:'#FFFFFF',
     borderRadius:15,
     boxShadow:'0 4px 30px rgba(0, 0, 0, 0.1)',

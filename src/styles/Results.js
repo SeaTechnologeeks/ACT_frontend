@@ -34,7 +34,7 @@ const Styles = StyleSheet.create({
         shadowColor:'##48B6E4',
         borderRadius:15,
         boxShadow:'0 4px 30px rgba(0, 0, 0, 0.1)',
-        width:'90%',
+        width:'95%',
         padding:10,
         margin:10,
         flexDirection:'row',
@@ -70,11 +70,12 @@ const Styles = StyleSheet.create({
         color:'white',
         fontSize:22,
         marginTop:5,
-        fontFamily:'Roboto_400Regular',
+        fontFamily:'Montserrat_400Regular',
         
       },
       selectionMenu: {
-        backgroundColor:'#000000'
+        backgroundColor:'#000000',
+        
       }
 
 
