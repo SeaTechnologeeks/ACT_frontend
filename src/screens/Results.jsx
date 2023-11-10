@@ -1,4 +1,4 @@
-import React, { useEffect, useState, } from 'react'
+import React, { useEffect, useRef, useState, } from 'react'
 import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Styles from '../styles/Results';
@@ -9,8 +9,14 @@ import { useFonts } from 'expo-font';
 import CustomSwitch from '../components/customSwitch';
 import VinData from '../components/VinData';
 import TicketsData from '../components/TicketsData';
+import LottieView from 'lottie-react-native';
+
+
+
+
 
 const Results = ({navigation}) => {
+  const animation = useRef(null);
   const car = useSelector((state) => state.car)
   const [MainAvatar,SetAvatar] = useState('https://images2.imgbox.com/14/f8/1aFbQqtX_o.png')
   const [CarDataTab,SetCarDataTab] = useState(1)
@@ -36,7 +42,7 @@ const Results = ({navigation}) => {
       }
       if (car && car.vinDetails) {
         SetAvatar(car.vinDetails[4]);
-        SetLoading(car.loading);
+       SetLoading(car.loading);
       }
       
     
@@ -51,8 +57,18 @@ const Results = ({navigation}) => {
         {(loading || !car.vinDetails) ? ( 
        
           <View style={Styles.Loadingcontainer}>
-            <ActivityIndicator size="large" color='#E1E1E1' />
-            <Text style={Styles.Loadertext}>Fetching data...</Text>
+             <LottieView
+        autoPlay
+        ref={animation}
+        style={{
+          width: 100,
+          height: 200,
+   
+        }}
+        // Find more Lottie files at https://lottiefiles.com/featured
+        source={require('../../assets/lotties/loader.json')}
+      />
+      <Text style={Styles.Loadertext}>Fetching Data...</Text>
           </View>
         ) : (
           <>

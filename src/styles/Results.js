@@ -14,13 +14,12 @@ const Styles = StyleSheet.create({
       },
 
     Loadingcontainer: {
-      flex: 1,
-      flexDirection:'column',
-      backgroundColor: 'black',
-      width: '100%',
-      height: '100%',
-      alignContent:"center",
-      justifyContent:"center",
+  
+   
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+    
           
     },
       TopNav:{
@@ -83,7 +82,7 @@ const Styles = StyleSheet.create({
       Loadertext:{
         color: '#E1E1E1',
         fontSize:22,
-        marginTop:5,
+   
         textAlign:'center',
         fontFamily:'Montserrat_400Regular',
         

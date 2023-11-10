@@ -12,25 +12,25 @@ const Styles = StyleSheet.create({
   },
   
   loaderContainer: {
-
+    flex: 1,    
       backgroundColor: 'black',
       width: '100%',
       height: '100%',
       alignContent:"center",
       justifyContent:"center",
   },
-  loaderImage: {
-    width: 50,
-    height: 50,
-    alignContent:"center",
-    alignItems: "center",
-    
-  },
+  Loadingcontainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  
+},
+
   loadingText: {
     color: '#E1E1E1',
     fontSize:22,
     marginLeft:5,
     fontFamily:'Montserrat_400Regular',
+    textAlign:'center',
   },
 
 
