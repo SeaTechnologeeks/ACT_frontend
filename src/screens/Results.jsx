@@ -10,6 +10,7 @@ import CustomSwitch from '../components/customSwitch';
 import VinData from '../components/VinData';
 import TicketsData from '../components/TicketsData';
 import LottieView from 'lottie-react-native';
+import RecordsData from '../components/RecordsData';
 
 
 
@@ -36,7 +37,7 @@ const Results = ({navigation}) => {
 
     useEffect(() => {
       
-      console.log(car)
+
       if (!fontsLoaded && !fontError) {
         return undefined;
       }
@@ -44,7 +45,7 @@ const Results = ({navigation}) => {
         SetAvatar(car.vinDetails[4]);
        SetLoading(car.loading);
       }
-      
+      console.log(car)
     
     
     },[car,MainAvatar])
@@ -113,9 +114,9 @@ const Results = ({navigation}) => {
     </View>
 
     <ScrollView style={{margin:10,padding:10,top:'-15%'}}>
-      {CarDataTab == 1 && <Text style={Styles.title}>Tickets</Text>}
+      {CarDataTab == 1 && <TicketsData data={car.tickets}/>}
       {CarDataTab == 2 && <VinData data={car.vinDetails}/> }
-      {CarDataTab == 3 && <TicketsData data={car.tickets}/>}
+      {CarDataTab == 3 && <RecordsData data={car.criminalRecords}/>}
     </ScrollView>
 
           </>

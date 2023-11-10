@@ -8,11 +8,8 @@ import FontAwesome from '@expo/vector-icons/FontAwesome5';
 import  Ionicons  from '@expo/vector-icons/Ionicons'
 import AntDesign from '@expo/vector-icons/AntDesign'
 
-const VinData = ({data,navigation}) => {
+const VinData = ({data}) => {
 
-   const handleScrollToBottom = () => {
-      scrollViewRef.current.scrollToEnd({ animated: true });
-    };
   
 
     let [fontsLoaded, fontError] = useFonts({

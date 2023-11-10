@@ -10,14 +10,6 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  CardContainer:{
-   
-      flex: 1,
-     width:'100%',
-      margin:10,
-      padding:10,
-     
-  },
   
   loaderContainer: {
     flex: 1,    
