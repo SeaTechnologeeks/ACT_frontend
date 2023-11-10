@@ -38,7 +38,9 @@ const carSlice = createSlice({
           state.vinDetails = details;
 
         },
-
+        loading(state, action) {
+          state.loading = action.payload;
+        },
       },
       extraReducers: (builder) => {
         builder

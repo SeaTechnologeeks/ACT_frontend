@@ -14,7 +14,7 @@ const CustomSwitch = ({selectionMode,option1,option2,option3, onSelectSwitch}) =
         width:'80%',
         backgroundColor:'#000000',
         borderRadius:80,
-        borderColor:'#FFFFFF',
+        borderColor:'#E1E1E1',
         borderWidth:2,
         boxShadow:'0 4px 30px rgba(0, 0, 0, 0.5)',
         flexDirection:'row',

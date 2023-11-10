@@ -10,13 +10,19 @@ const Styles = StyleSheet.create({
         backgroundColor: 'black',
         width: '100%',
         height: '100%',
-     
         paddingTop:50,
-        
-        
-       
-        
       },
+
+    Loadingcontainer: {
+      flex: 1,
+      flexDirection:'column',
+      backgroundColor: 'black',
+      width: '100%',
+      height: '100%',
+      alignContent:"center",
+      justifyContent:"center",
+          
+    },
       TopNav:{
         flexDirection:'row',
         justifyContent: 'space-between',
@@ -55,21 +61,30 @@ const Styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingLeft:'25%',
-        color:'white',
+        color: '#E1E1E1',
         fontSize:35,
         fontWeight:'bold',
         fontFamily:'Montserrat_600SemiBold',
       },
       title:{
-        color:'white',
+        color: '#E1E1E1',
         fontSize:35,
         fontWeight:'bold',
         fontFamily:'Montserrat_600SemiBold',
       },
       text:{
-        color:'white',
+        color: '#E1E1E1',
         fontSize:22,
         marginTop:5,
+        fontFamily:'Montserrat_400Regular',
+        
+      },
+
+      Loadertext:{
+        color: '#E1E1E1',
+        fontSize:22,
+        marginTop:5,
+        textAlign:'center',
         fontFamily:'Montserrat_400Regular',
         
       },

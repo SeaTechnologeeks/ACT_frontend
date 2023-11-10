@@ -8,7 +8,12 @@ import FontAwesome from '@expo/vector-icons/FontAwesome5';
 import  Ionicons  from '@expo/vector-icons/Ionicons'
 import AntDesign from '@expo/vector-icons/AntDesign'
 
-const VinData = ({data}) => {
+const VinData = ({data,navigation}) => {
+
+   const handleScrollToBottom = () => {
+      scrollViewRef.current.scrollToEnd({ animated: true });
+    };
+  
 
     let [fontsLoaded, fontError] = useFonts({
         Roboto_400Regular,Montserrat_400Regular});

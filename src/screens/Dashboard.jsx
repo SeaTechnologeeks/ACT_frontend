@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { SafeAreaView, ScrollView, View,ImageBackground, TextInput, TouchableOpacity, Alert } from 'react-native'
+import React, {  useState } from 'react'
+import { SafeAreaView, View,ImageBackground, TextInput, TouchableOpacity, Alert } from 'react-native'
 import TopNav from '../components/TopNav';
 import Styles from '../styles/Dashoard';
 import  bg from '../../assets/bg.png'
 import { BlurView } from 'expo-blur';
 import { Text } from 'react-native';
 import { VINvalidate } from '../utilities/validate';
-import { useDispatch, useSelector,shallowEqual } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { RecordsFetch, TicketsFetch, vinFetch } from '../store/AsyncThunk';
 
 
@@ -19,12 +19,13 @@ import { RecordsFetch, TicketsFetch, vinFetch } from '../store/AsyncThunk';
 
 const Dashboard = ({navigation}) => {
   const [vin,setVin] = useState('')
-  const [loading,setLoading] =  useState(useSelector((state) => state.car),shallowEqual)
+
   const dispatch = useDispatch();
   
  
 
   const validate = (vin) => {
+    
     console.log(vin)
     if(VINvalidate(vin)){
       dispatch(vinFetch(vin))

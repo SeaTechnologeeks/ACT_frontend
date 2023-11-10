@@ -27,8 +27,8 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
       },
       itemDescriptionText:{
-        color:'grey',
-        fontSize:20,
+        color: '#E1E1E1',
+        fontSize:22,
         paddingLeft:5,
         fontFamily:'Montserrat_400Regular',
       },
@@ -36,10 +36,15 @@ const Styles = StyleSheet.create({
       
       },
       itemText:{
-        color:'grey',
-        fontSize:20,
+        color: '#E1E1E1',
+        fontSize:22,
         marginLeft:5,
         fontFamily:'Montserrat_400Regular',
+      },
+      scrollDownButton:{
+        margin:10,
+        padding:10,
+        backgroundColor:'#FFFFFF',
       }
 
 
