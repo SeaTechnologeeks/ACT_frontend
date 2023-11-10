@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View, Modal, Button, TouchableOpacity } from 'react-native';
 import Styles from '../styles/DetailsCard';
+import { Roboto_400Regular } from '@expo-google-fonts/roboto';
+import {Montserrat_600SemiBold,Montserrat_400Regular} from '@expo-google-fonts/montserrat';
+import { useFonts } from 'expo-font';
+
+
+
 
 export const DetailsCard = ({ data }) => {
-    console.log(data)
+  let [fontsLoaded, fontError] = useFonts({
+    Roboto_400Regular,Montserrat_600SemiBold,Montserrat_400Regular });
   const [selectedItem, setSelectedItem] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -15,6 +22,18 @@ export const DetailsCard = ({ data }) => {
   const closeModal = () => {
     setModalVisible(false);
   };
+
+
+  useEffect(() => {
+      
+
+    if (!fontsLoaded && !fontError) {
+      return undefined;
+    }
+    
+
+  
+  },[])
 
   return (
     <View style={Styles.container}>
