@@ -62,7 +62,7 @@ const Dashboard = ({navigation}) => {
                     <Text style={Styles.text}>Decode VIN</Text>
                   </TouchableOpacity>
                   <Text style={Styles.text}>OR</Text>
-                  <TouchableOpacity style={Styles.vinButton} onPress={() => navigation.navigate('register')}>
+                  <TouchableOpacity style={Styles.vinButton} onPress={() => navigation.navigate('scanner')}>
                     <Text style={Styles.text}>Scan VIN</Text>
                   </TouchableOpacity>
                   

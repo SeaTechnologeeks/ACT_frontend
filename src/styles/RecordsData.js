@@ -4,8 +4,8 @@ const Styles = StyleSheet.create({
   container: {
     flex: 1,
    width:'100%',
-    margin:10,
-    padding:10,
+    margin:1,
+    padding:1,
     top:-30,
     alignItems: 'center',
     justifyContent: 'center',
@@ -34,6 +34,14 @@ const Styles = StyleSheet.create({
     fontFamily:'Montserrat_400Regular',
     
   },
+  CardContainer:{
+   
+    flex: 1,
+   width:'100%',
+    margin:10,
+    padding:10,
+   
+},
 
 
 

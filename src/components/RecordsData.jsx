@@ -46,7 +46,7 @@ return (
 
    ) : (
 <>
-<ScrollView>
+<ScrollView style={Styles.CardContainer}>
 
 
 <DetailsCardRecords data={data}/>

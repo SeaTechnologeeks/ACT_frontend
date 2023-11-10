@@ -6,6 +6,7 @@ import Profile from '../screens/Profile';
 import Settings from '../screens/Settings';
 import AuthStack from './AuthStack';
 import Results from '../screens/Results';
+import QRscanner from '../components/QRscanner';
 
 
 const Drawer = createDrawerNavigator();
@@ -25,6 +26,8 @@ const MainStack = () => {
         <Drawer.Screen name="profile" component={Profile}/>
         <Drawer.Screen name ="settings" component={Settings}/>
         <Drawer.Screen name="Results" component={Results}/>
+        <Drawer.Screen name="scanner" component={QRscanner}/>
+      
       
       
     </Drawer.Navigator>

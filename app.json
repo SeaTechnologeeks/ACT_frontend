@@ -27,5 +27,13 @@
     "web": {
       "favicon": "./assets/logo.png"
     }
-  }
+  },
+  "plugins": [
+    [
+      "expo-barcode-scanner",
+      {
+        "cameraPermission": "Allow Anti-Car Theft to access camera."
+      }
+    ]
+  ]
 }

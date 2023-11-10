@@ -5,7 +5,7 @@ import Styles from '../styles/Results';
 import { useSelector } from 'react-redux';
 import { Roboto_400Regular } from '@expo-google-fonts/roboto';
 import {Montserrat_600SemiBold,Montserrat_400Regular} from '@expo-google-fonts/montserrat';
-import { useFonts } from 'expo-font';
+import { loadAsync } from 'expo-font';
 import CustomSwitch from '../components/customSwitch';
 import VinData from '../components/VinData';
 import TicketsData from '../components/TicketsData';
@@ -24,8 +24,17 @@ const Results = ({navigation}) => {
   const [loading,SetLoading] = useState(useSelector((state) => state.car.loading))
 
 
-  let [fontsLoaded, fontError] = useFonts({
-    Roboto_400Regular,Montserrat_600SemiBold,Montserrat_400Regular });
+  const loadFonts = async () => {
+    try {
+      await loadAsync({
+        Roboto_400Regular,
+        Montserrat_600SemiBold,
+        Montserrat_400Regular,
+      });
+    } catch (error) {
+      console.error('Error loading fonts:', error);
+    }
+  };
   
   const onSelectSwitch = value => {
       SetCarDataTab(value)
@@ -36,17 +45,12 @@ const Results = ({navigation}) => {
 
 
     useEffect(() => {
-      
-
-      if (!fontsLoaded && !fontError) {
-        return undefined;
-      }
+      loadFonts();
       if (car && car.vinDetails) {
         SetAvatar(car.vinDetails[4]);
        SetLoading(car.loading);
       }
-      console.log(car)
-    
+
     
     },[car,MainAvatar])
 
