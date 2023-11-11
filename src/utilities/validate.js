@@ -1,3 +1,4 @@
+
 import { Alert } from "react-native";
 
 
@@ -39,3 +40,53 @@ import { Alert } from "react-native";
       
       }
   }
+
+  export const BarcodeValidate = (barcode,type) => {
+
+ 
+    console.log(type)
+     console.log(barcode)
+
+     // Array to store extracted variables
+  const extractedVariables = [];
+
+
+  // Check if the type is valid
+  const isValidType = type === 'org.iso.PDF417';
+
+  if (isValidType){
+
+
+  // Split the barcode into variables using the "%" delimiter
+  const variables = barcode.split('%');
+
+  // Remove empty strings from the array
+  const filteredVariables = variables.filter(Boolean);
+
+ // Update the extracted variables array
+ extractedVariables.length = 0; // Clear the array
+ extractedVariables.push(...filteredVariables);
+
+  } 
+ 
+
+
+ // Function to validate the barcode
+ const validateBarcode = () => {
+ 
+
+  // Check if the type is valid and there are extracted variables
+  if (isValidType && extractedVariables.length > 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+return {
+  isValid: validateBarcode(),
+  extractedArray: extractedVariables,
+};
+};
+
+  

@@ -1,7 +1,26 @@
 import { StyleSheet } from 'react-native'
 
 const Styles = StyleSheet.create({
-    container: {
+
+  container: {
+    flex: 1,
+    flexDirection:'column',
+    backgroundColor: 'black',
+    width: '100%',
+    height: '100%',
+    paddingTop:50,
+  },
+
+Loadingcontainer: {
+
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+
+      
+},
+    Framecontainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -46,6 +65,14 @@ const Styles = StyleSheet.create({
       },
       flashButtonText: {
         color: 'black',
+      },
+      Loadertext:{
+        color: '#E1E1E1',
+        fontSize:22,
+   
+        textAlign:'center',
+        fontFamily:'Montserrat_400Regular',
+        
       },
 
 })

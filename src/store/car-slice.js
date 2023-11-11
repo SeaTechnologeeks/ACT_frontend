@@ -38,7 +38,7 @@ const carSlice = createSlice({
           state.vinDetails = details;
 
         },
-        loading(state, action) {
+        setLoading(state, action) {
           state.loading = action.payload;
         },
       },
@@ -98,5 +98,5 @@ const carSlice = createSlice({
 
 
 });
-export const {fetchCarDetails, fetchCriminalRecords, fetchTickets, vinDetails} = carSlice.actions;
+export const {fetchCarDetails, fetchCriminalRecords, fetchTickets, vinDetails, setLoading} = carSlice.actions;
 export default carSlice.reducer;
