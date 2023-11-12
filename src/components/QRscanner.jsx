@@ -17,7 +17,6 @@ const QRscanner = ({navigation}) => {
     const animation = useRef(null);
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.loader.loading);
-    
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
     const [isFlashOn, setIsFlashOn] = useState(false);

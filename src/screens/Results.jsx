@@ -12,6 +12,7 @@ import TicketsData from '../components/TicketsData';
 import LottieView from 'lottie-react-native';
 import RecordsData from '../components/RecordsData';
 import {setLoading} from '../store/loader-slice';
+import ScanModal from '../components/ScanModal';
 
 
 
@@ -25,6 +26,9 @@ const Results = ({navigation}) => {
   const [CarDataTab,SetCarDataTab] = useState(1)
   const loading = useSelector((state) => state.loader.loading);
   const scanData = useSelector((state) => state.scan);
+  const [modalVisible, setModalVisible] = useState(false);
+
+  
 
   const loadFonts = async () => {
     try {
@@ -43,11 +47,17 @@ const Results = ({navigation}) => {
   } 
   
 
+  const openModal = () => {
+    setModalVisible(true);
+  };
 
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
 
     useEffect(() => {
-      console.log(scanData)
+      
       loadFonts();
       if (car && car.vinDetails) {
         SetAvatar(car.vinDetails[4]);
@@ -90,7 +100,7 @@ const Results = ({navigation}) => {
             </View>
             <Text style={Styles.MainTitle}>Vin Summary</Text>
     
-            <View style={Styles.TopView}>
+            <TouchableOpacity style={Styles.TopView} onPress={openModal}>
         <View style={Styles.TopDetails}>
             <Text style={Styles.title}>{car.vinDetails[0]}</Text>
             <Text style={Styles.text}>{car.vinDetails[1]}</Text>
@@ -109,7 +119,7 @@ const Results = ({navigation}) => {
      
         </View>
        
-   </View>
+   </TouchableOpacity>
 
     <View style={Styles.selectionMenu}>
       <CustomSwitch
@@ -128,6 +138,11 @@ const Results = ({navigation}) => {
 
           </>
         )}
+        <ScanModal
+           modalVisible={modalVisible}
+           closeModal={closeModal}
+              
+          />
       </View>
     );
     
