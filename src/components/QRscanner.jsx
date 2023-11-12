@@ -8,15 +8,16 @@ import { loadAsync } from 'expo-font';
 import {Montserrat_400Regular} from '@expo-google-fonts/montserrat';
 import { BarcodeValidate, VINvalidate } from '../utilities/validate';
 import { RecordsFetch, TicketsFetch, vinFetch } from '../store/AsyncThunk';
-import { setLoading } from '../store/car-slice';
+import {setLoading} from '../store/loader-slice';
+import { setDetails } from '../store/scan-slice';
 
 
 
 const QRscanner = ({navigation}) => {
     const animation = useRef(null);
     const dispatch = useDispatch();
-    const loading = useSelector((state) => state.car.loading);
-
+    const loading = useSelector((state) => state.loader.loading);
+    
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
     const [isFlashOn, setIsFlashOn] = useState(false);
@@ -32,6 +33,7 @@ const QRscanner = ({navigation}) => {
       }
     };
     useEffect(() => {
+     
       loadFonts();
         (async () => {
           const { status } = await Camera.requestCameraPermissionsAsync();
@@ -45,9 +47,10 @@ const QRscanner = ({navigation}) => {
           dispatch(vinFetch(vin))
           dispatch(TicketsFetch(vin))
           dispatch(RecordsFetch(vin))
+         
         
        
-          navigation.navigate("Results")
+          
        
        
         }else {
@@ -67,8 +70,11 @@ const QRscanner = ({navigation}) => {
         
        
        } else {
-
+        
         validate(result.extractedArray[11]);
+       dispatch(setDetails(result.extractedArray))
+        navigation.navigate("Results")
+        
     
        }
         

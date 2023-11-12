@@ -8,6 +8,7 @@ import { Text } from 'react-native';
 import { VINvalidate } from '../utilities/validate';
 import { useDispatch} from 'react-redux';
 import { RecordsFetch, TicketsFetch, vinFetch } from '../store/AsyncThunk';
+import { setLoading } from '../store/loader-slice';
 
 
 
@@ -31,6 +32,7 @@ const Dashboard = ({navigation}) => {
       dispatch(vinFetch(vin))
       dispatch(TicketsFetch(vin))
       dispatch(RecordsFetch(vin))
+      dispatch(setLoading(true));
     
    
       navigation.navigate("Results")

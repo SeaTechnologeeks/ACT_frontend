@@ -16,6 +16,9 @@ const carSlice = createSlice({
       },
 
       reducer: {
+        setDetails(state, action) {
+          state.details = action.payload;
+        },
 
         fetchCarDetails (state, action){
             const details = action.payload;
@@ -25,7 +28,7 @@ const carSlice = createSlice({
         },
         fetchCriminalRecords (state, action){
           const records = action.payload;
-          state.records = records;
+         state.criminalRecords = records;
 
         },
         fetchTickets (state, action){
@@ -38,9 +41,7 @@ const carSlice = createSlice({
           state.vinDetails = details;
 
         },
-        setLoading(state, action) {
-          state.loading = action.payload;
-        },
+       
       },
       extraReducers: (builder) => {
         builder
@@ -98,5 +99,5 @@ const carSlice = createSlice({
 
 
 });
-export const {fetchCarDetails, fetchCriminalRecords, fetchTickets, vinDetails, setLoading} = carSlice.actions;
+export const {fetchCarDetails, fetchCriminalRecords, fetchTickets, vinDetails,  setDetails} = carSlice.actions;
 export default carSlice.reducer;

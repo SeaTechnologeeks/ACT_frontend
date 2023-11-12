@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, } from 'react'
 import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Styles from '../styles/Results';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Roboto_400Regular } from '@expo-google-fonts/roboto';
 import {Montserrat_600SemiBold,Montserrat_400Regular} from '@expo-google-fonts/montserrat';
 import { loadAsync } from 'expo-font';
@@ -11,6 +11,7 @@ import VinData from '../components/VinData';
 import TicketsData from '../components/TicketsData';
 import LottieView from 'lottie-react-native';
 import RecordsData from '../components/RecordsData';
+import {setLoading} from '../store/loader-slice';
 
 
 
@@ -18,11 +19,12 @@ import RecordsData from '../components/RecordsData';
 
 const Results = ({navigation}) => {
   const animation = useRef(null);
+  const dispatch = useDispatch();
   const car = useSelector((state) => state.car)
   const [MainAvatar,SetAvatar] = useState('https://images2.imgbox.com/14/f8/1aFbQqtX_o.png')
   const [CarDataTab,SetCarDataTab] = useState(1)
-  const [loading,SetLoading] = useState(useSelector((state) => state.car.loading))
-
+  const loading = useSelector((state) => state.loader.loading);
+  const scanData = useSelector((state) => state.scan);
 
   const loadFonts = async () => {
     try {
@@ -45,10 +47,11 @@ const Results = ({navigation}) => {
 
 
     useEffect(() => {
+      console.log(scanData)
       loadFonts();
       if (car && car.vinDetails) {
         SetAvatar(car.vinDetails[4]);
-       SetLoading(car.loading);
+        dispatch(setLoading(false));
       }
 
     
