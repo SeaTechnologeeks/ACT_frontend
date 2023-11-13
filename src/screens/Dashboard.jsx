@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { SafeAreaView, View,ImageBackground, TextInput, TouchableOpacity, Alert } from 'react-native'
 import TopNav from '../components/TopNav';
 import Styles from '../styles/Dashoard';
@@ -9,6 +9,7 @@ import { VINvalidate } from '../utilities/validate';
 import { useDispatch} from 'react-redux';
 import { RecordsFetch, TicketsFetch, vinFetch } from '../store/AsyncThunk';
 import { setLoading } from '../store/loader-slice';
+import { setDetails } from '../store/scan-slice';
 
 
 
@@ -22,6 +23,8 @@ const Dashboard = ({navigation}) => {
   const [vin,setVin] = useState('')
 
   const dispatch = useDispatch();
+
+
   
  
 
@@ -43,6 +46,14 @@ const Dashboard = ({navigation}) => {
       return VINvalidate(vin)
     }
 }
+
+
+useEffect(() => {
+  // Clear the input value when the component mounts
+  dispatch(setLoading(false));
+  dispatch(setDetails([]));
+ 
+}, []);
 
 
 

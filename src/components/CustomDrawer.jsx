@@ -5,11 +5,22 @@ import { Image, ImageBackground, TouchableOpacity, View } from 'react-native'
 import { Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { setLoading } from '../store/loader-slice'
+import { setDetails } from '../store/scan-slice'
+import { useDispatch } from 'react-redux'
 
 
 
 const CustomDrawer = (props) => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+
+  const resetAllStates = () => {
+    // Clear the input value when the component mounts
+    dispatch(setLoading(false));
+    dispatch(setDetails([]));
+  }
   return (
       <BlurView  intensity={90} style={{flex:1}}>
         <DrawerContentScrollView 
@@ -39,7 +50,10 @@ const CustomDrawer = (props) => {
             <DrawerItem
                   
                   label={'Home'}
-                  onPress={()=>navigation.navigate('Main')}/>
+                   onPress={() => {
+              resetAllStates(); // Reset states when Home is pressed
+              navigation.navigate('Main');
+            }}/>
             <DrawerItem
                   
                   label={'Profile'}
